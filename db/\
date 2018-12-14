@@ -1,0 +1,26 @@
+DROP TABLE transactions;
+DROP TABLE tags CASCADE;
+DROP TABLE vendors CASCADE;
+
+
+CREATE TABLE tags
+(
+id SERIAL8 PRIMARY KEY;
+name VARCHAR(255);
+);
+
+CREATE TABLE vendors
+(
+id SERIAL8 PRIMARY KEY;
+name VARCHAR(255),
+);
+
+
+CREATE TABLE transactions
+(
+  id SERIAL8 PRIMARY KEY;
+  amount INT4;
+  
+);
+
+
