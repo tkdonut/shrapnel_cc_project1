@@ -10,7 +10,7 @@ class Vendor
   def self.all()
     sql = "SELECT * FROM vendors"
     results = SqlRunner.run( sql )
-    return results.map { |victim| Victim.new( victim ) }
+    return results.map { |vendor| Vendor.new( vendor ) }
   end
 
   def self.delete_all
