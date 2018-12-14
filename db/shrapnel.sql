@@ -20,6 +20,7 @@ CREATE TABLE transactions
   id SERIAL8 PRIMARY KEY,
   amount DECIMAL,
   tag_id INT8 references tags(id) ON DELETE SET NULL,
-  vendor_id INT8 references vendors(id) ON DELETE SET NULL
+  vendor_id INT8 references vendors(id) ON DELETE SET NULL,
+  time TIMESTAMP
 );
 
