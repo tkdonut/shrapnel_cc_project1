@@ -1,0 +1,8 @@
+<% @transactions.each do |transaction| %>
+  Amount: £<%= transaction.amount %><br>
+  Date: <%= transaction.time.strftime("%m/%d/%Y")%><br>
+  Time: <%= transaction.time.strftime("%I:%M%p")%><br>
+  Vendor: <%= transaction.vendor.name %><br>
+  Tag:  <%= transaction.tag.name %><br>
+  <hr></hr>
+<% end %>

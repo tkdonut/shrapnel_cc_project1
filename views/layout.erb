@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="\style.css">
+  </head>
+  <body>
+    <div class = 'flex-aligner'>
+      <div class = 'flexbox' id = 'nav_bar'>
+        <nav>
+          <a href = '/transactions/'> Transactions Index </a>
+        </nav>
+      </div>
+      <div class = 'flexbox'>
+        <%= yield %> 
+      </div>
+    </div>
+  </body>
+</html>
