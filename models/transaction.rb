@@ -58,4 +58,18 @@ class Transaction
     values = [@amount, @tag_id, @vendor_id, @time, @id]
     SqlRunner.run(sql, values)
   end
+  
+  def tag
+    sql = "SELECT * FROM tags
+          WHERE id = $1"
+    values = [@tag_id]
+    return Tag.new(SqlRunner.run(sql, values).first)
+  end
+  
+  def vendor
+    sql = "SELECT * FROM vendors
+          WHERE id = $1"
+    values = [@vendor_id]
+    return Vendor.new(SqlRunner.run(sql, values).first)
+  end
 end

@@ -56,4 +56,25 @@ class Tag
     values = [@name, @id]
     SqlRunner.run(sql, values)
   end
+
+  def transactions
+    sql = "SELECT * FROM transactions
+           WHERE tag_id = $1"
+    values = [@id]
+    return SqlRunner.run(sql, values).map {
+      |transaction| Transaction.new(transaction)
+    }
+  end
+  
+  def vendors
+    sql = "SELECT v.* FROM
+          transactions t INNER JOIN vendors v
+          ON t.vendor_id = v.id
+          WHERE t.tag_id = $1"
+    values = [@id]
+    return SqlRunner.run(sql, values).map {
+      |vendor| Vendor.new(vendor)
+    }
+
+  end
 end
