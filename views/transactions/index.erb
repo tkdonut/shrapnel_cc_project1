@@ -1,8 +1,14 @@
 <% @transactions.each do |transaction| %>
-  Amount: £<%= transaction.amount %><br>
-  Date: <%= transaction.time.strftime("%m/%d/%Y")%><br>
-  Time: <%= transaction.time.strftime("%I:%M%p")%><br>
-  Vendor: <%= transaction.vendor.name %><br>
-  Tag:  <%= transaction.tag.name %><br>
+  <table class = transcard>
+    <tr>
+      <td>Amount: £<%= transaction.amount %></td>
+      <td>Date: <%= transaction.time.strftime("%m/%d/%Y")%></td>
+      <td>Time: <%= transaction.time.strftime("%-I:%M%p")%></td>
+    </tr>
+    <tr>
+      <td>Vendor: <%= transaction.vendor.name %><br></td>
+      <td>Tag:  <%= transaction.tag.name %><br></td>
+    </tr>
+  </table>
   <hr></hr>
 <% end %>

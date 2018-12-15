@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 body {
-background-color: #606060;
+background-image: url('/assets/milkyway.jpg');
+font-family: 'Raleway', sans-serif;
+background-size:cover;
 }
 
 .flex-aligner{
@@ -7,6 +10,7 @@ background-color: #606060;
   height: 100%;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .flexbox{
@@ -15,4 +19,30 @@ border: solid;
 padding: 40px;
 box-shadow: 3px 3px 3px Black;
 background-color: white;
+max-height: 80%;
 }
+
+.transcard td{
+padding: 10px;
+width:300px;
+}
+
+#yield {
+  overflow-y: scroll;
+  max-height:80%;
+overflow 
+}
+
+a {
+  text-decoration: none;
+  color: Black;
+}
+
+a:hover {
+ color:darkred;
+}
+
+#nav_bar a{
+margin: 10px;
+}
+

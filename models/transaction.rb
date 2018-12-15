@@ -8,8 +8,8 @@ class Transaction
     @tag_id = options['tag_id']
     @vendor_id = options['vendor_id']
     #If no timestamp already exists set to current date
-    if options['timestamp'] 
-      @time= options['timestamp']
+    if options['time'] 
+      @time= DateTime.parse(options['time'])
     else
       @time= DateTime.now
     end

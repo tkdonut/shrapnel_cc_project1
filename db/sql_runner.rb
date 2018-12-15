@@ -1,16 +1,16 @@
-require( 'pg' )
+require('pg')
 
 class SqlRunner
 
-  def self.run( sql, values = [] )
+  def self.run(sql, values = [])
     begin
-      db = PG.connect({ dbname: 'shrapnel', host: 'localhost' })
-      db.prepare("query", sql)
-      result = db.exec_prepared( "query", values )
+      db = PG.connect(dbname: 'shrapnel', host: 'localhost')
+      db.prepare('query', sql)
+      result = db.exec_prepared('query', values)
     ensure
-      db.close() if db != nil
+      db.close unless db.nil?
     end
-    return result
+    result
   end
 
 end
