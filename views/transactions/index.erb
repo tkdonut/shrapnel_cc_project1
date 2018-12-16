@@ -1,14 +1,15 @@
+<%='No transactions recorded!' if @transactions.length == 0 %>
 <% @transactions.each do |transaction| %>
-  <table class = transcard>
+  <table style='border: solid; margin: 10px;' class = transcard>
     <tr>
       <td>Amount: £<%= transaction.amount %></td>
-      <td>Date: <%= transaction.time.strftime("%m/%d/%Y")%></td>
+      <td>Date: <%= transaction.time.strftime("%d/%m/%Y")%></td>
       <td>Time: <%= transaction.time.strftime("%-I:%M%p")%></td>
     </tr>
     <tr>
       <td>Vendor: <%= transaction.vendor.name %><br></td>
       <td>Tag:  <%= transaction.tag.name %><br></td>
+      <td><a href='/transactions/<%=transaction.id%>'><img width=50px src='/assets/mag.svg'></a></td>
     </tr>
   </table>
-  <hr></hr>
 <% end %>

@@ -1,0 +1,21 @@
+  <table class = transcard>
+    <tr>
+      <td>Amount: £<%= @transaction.amount %></td>
+      <td>Date: <%= @transaction.time.strftime("%d/%m/%Y")%></td>
+      <td>Time: <%= @transaction.time.strftime("%-I:%M%p")%></td>
+    </tr>
+    <tr>
+      <td>Vendor: <%= @transaction.vendor.name %><br></td>
+      <td>Tag:  <%= @transaction.tag.name %><br></td>
+    </tr>
+  </table>
+  <hr></hr>
+    <nav class="bottom_icons">
+      <form action = '/transactions/<%=@transaction.id%>/delete', method='POST'>
+        <input type = 'image' src='/assets/trashcan.svg'>
+      </form>
+
+      <form action = '/transactions/<%=@transaction.id%>/edit', method='GET'>
+        <input type = 'image' src='/assets/edit.svg'>
+      </form>
+    </nav>
