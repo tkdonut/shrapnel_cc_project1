@@ -4,7 +4,7 @@ class Transaction
   attr_accessor :amount, :tag_id, :vendor_id, :time
   def initialize(options)
     @id = options['id'] if options['id']
-    @amount = options['amount'].to_i
+    @amount = options['amount'].to_f
     @tag_id = options['tag_id']
     @vendor_id = options['vendor_id']
     #If no timestamp already exists set to current date

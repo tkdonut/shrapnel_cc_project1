@@ -1,6 +1,6 @@
   <table class = transcard>
     <tr>
-      <td>Amount: £<%= @transaction.amount %></td>
+      <td>Amount: £<%= '%.2f' % @transaction.amount %></td>
       <td>Date: <%= @transaction.time.strftime("%d/%m/%Y")%></td>
       <td>Time: <%= @transaction.time.strftime("%-I:%M%p")%></td>
     </tr>
