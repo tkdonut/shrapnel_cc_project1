@@ -8,38 +8,39 @@ class Tag
     @name = options['name']
   end
 
-# Class methods
+  # Class methods
 
-  def self.all()
-    sql = "SELECT * FROM tags"
-    results = SqlRunner.run( sql )
-    return results.map { |tag| Tag.new( tag ) }
+  def self.all
+    sql = 'SELECT * FROM tags'
+    results = SqlRunner.run(sql)
+    results.map { |tag| Tag.new(tag) }
   end
 
   def self.delete_all
-    sql = "DELETE FROM tags"
-    SqlRunner.run( sql )
+    sql = 'DELETE FROM tags'
+    SqlRunner.run(sql)
   end
 
-  def self.find( id )
-    sql = "SELECT * FROM tags
+  def self.find(id)
+    sql =
+      "SELECT * FROM tags
     WHERE id = $1"
     values = [id]
-    results = SqlRunner.run( sql, values )
-    return Tag.new( results.first )
+    results = SqlRunner.run(sql, values)
+    Tag.new(results.first) 
   end
 
-# Instance methods
+  # Instance methods
 
-  def save()
-    sql = 
-    "INSERT INTO tags (name)
+  def save
+    sql =
+      "INSERT INTO tags (name)
     VALUES ($1)
     RETURNING id"
     values = [@name]
     results = SqlRunner.run(sql, values)
-    @id = results.first()['id'].to_i
-    return self
+    @id = results.first['id'].to_i
+    self
   end
 
   def delete
@@ -61,20 +62,19 @@ class Tag
     sql = "SELECT * FROM transactions
            WHERE tag_id = $1"
     values = [@id]
-    return SqlRunner.run(sql, values).map {
-      |transaction| Transaction.new(transaction)
-    }
+    SqlRunner.run(sql, values).map do |transaction|
+      Transaction.new(transaction)
+    end
   end
-  
+
   def vendors
     sql = "SELECT v.* FROM
           transactions t INNER JOIN vendors v
           ON t.vendor_id = v.id
           WHERE t.tag_id = $1"
     values = [@id]
-    return SqlRunner.run(sql, values).map {
+    SqlRunner.run(sql, values).map {
       |vendor| Vendor.new(vendor)
     }
-
   end
 end

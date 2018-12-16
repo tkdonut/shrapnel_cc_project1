@@ -26,7 +26,7 @@ transaction1 = Transaction.new ({
   'amount' => '5.99',
   'vendor_id' => vendor1.id,
   'tag_id' => ent.id,
-  'timestamp' => DateTime.parse('Thursday, 13-Dec-2018 17:30:00 GMT+0000')
+  'time' => 'Thursday, 13-Dec-2018 17:30:00 GMT+0000'
 })
 transaction1.save
 
@@ -34,7 +34,7 @@ transaction2 = Transaction.new ({
   'amount' => '1.80',
   'vendor_id' => vendor4.id,
   'tag_id' => travel.id,
-  'timestamp' => DateTime.parse('Thursday, 13-Dec-2018 07:01:20 GMT+0000')
+  'time' => 'Thursday, 13-Dec-2018 07:01:20 GMT+0000'
 })
 transaction2.save
 
@@ -42,7 +42,7 @@ transaction3 = Transaction.new ({
   'amount' => '4.89',
   'vendor_id' => vendor2.id,
   'tag_id' => ent.id,
-  'timestamp' => DateTime.parse('Thursday, 13-Dec-2018 20:25:13 GMT+0000')
+  'time' => 'Thursday, 13-Dec-2018 20:25:13 GMT+0000'
 })
 transaction3.save
 
@@ -50,7 +50,7 @@ transaction4 = Transaction.new ({
   'amount' => '4.89',
   'vendor_id' => vendor2.id,
   'tag_id' => ent.id,
-  'timestamp' => DateTime.parse('Thursday, 13-Dec-2018 20:45:29 GMT+0000')
+  'time' => 'Thursday, 13-Dec-2018 20:45:29 GMT+0000'
 })
 transaction4.save
 
@@ -58,7 +58,7 @@ transaction5 = Transaction.new ({
   'amount' => '4.89',
   'vendor_id' => vendor2.id,
   'tag_id' => ent.id,
-  'timestamp' => DateTime.parse('Thursday, 13-Dec-2018 21:03:30 GMT+0000')
+  'time' => 'Thursday, 13-Dec-2018 21:03:30 GMT+0000'
 })
 transaction5.save
 
@@ -66,7 +66,7 @@ transaction6 = Transaction.new ({
   'amount' => '5.99',
   'vendor_id' => vendor2.id,
   'tag_id' => ent.id,
-  'timestamp' => DateTime.parse('Thursday, 13-Dec-2018 21:54:09 GMT+0000')
+  'time' => 'Thursday, 13-Dec-2018 21:54:09 GMT+0000'
 })
 transaction6.save
 
@@ -74,7 +74,7 @@ transaction7 = Transaction.new ({
   'amount' => '129.50',
   'vendor_id' => vendor11.id,
   'tag_id' => bills.id,
-  'timestamp' => DateTime.parse('Thursday, 13-Dec-2018 17:30:00 GMT+0000')
+  'time' => 'Thursday, 13-Dec-2018 17:30:00 GMT+0000'
 })
 transaction7.save
 
@@ -82,7 +82,7 @@ transaction8 = Transaction.new ({
   'amount' => '5.00',
   'vendor_id' => vendor5.id,
   'tag_id' => food.id,
-  'timestamp' => DateTime.parse('Thursday, 13-Dec-2018 17:30:00 GMT+0000')
+  'time' => 'Thursday, 13-Dec-2018 17:30:00 GMT+0000'
 })
 transaction8.save
 

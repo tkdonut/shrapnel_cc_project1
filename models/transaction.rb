@@ -4,7 +4,7 @@ class Transaction
   attr_accessor :amount, :tag_id, :vendor_id, :time
   def initialize(options)
     @id = options['id'] if options['id']
-    @amount = options['amount']
+    @amount = options['amount'].to_i
     @tag_id = options['tag_id']
     @vendor_id = options['vendor_id']
     #If no timestamp already exists set to current date
@@ -71,5 +71,12 @@ class Transaction
           WHERE id = $1"
     values = [@vendor_id]
     return Vendor.new(SqlRunner.run(sql, values).first)
+  end
+
+  def delete
+    sql = "DELETE FROM transactions
+          WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
   end
 end
