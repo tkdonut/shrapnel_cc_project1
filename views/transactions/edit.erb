@@ -1,0 +1,22 @@
+<h2> Edit transaction </h2>
+<form action='/transactions/<%= @transaction.id%>/edit' method='POST'>
+  <label for='amount'> Amount </label>
+  <input type='number' step = '0.01' name='amount' id='amount' value = '<%= '%.2f' % @transaction.amount %>'>
+  <label for='tag'> Tag: </label>
+  <select name='tag_id' id='tag'>
+    <% @tags.each do |tag| %>
+      <option <%="selected" if @transaction.tag.name == tag.name%> value = '<%=tag.id%>'><%=tag.name%></option>
+    <% end %>
+  </select>
+  <label for='vendor'> Vendor: </label>
+  <select name='vendor_id' id='vendor'>
+    <% @vendors.each do |vendor| %>
+      <option <%="selected" if @transaction.vendor.name == vendor.name%> value = '<%=vendor.id%>'><%=vendor.name%></option>
+    <% end %>
+  </select>
+  <label for='time'> Time: </label>
+  <input id= 'time' name= 'time' type='datetime-local' value='<%=@transaction.time.strftime("%Y-%m-%dT%H:%M")%>'>
+
+  <input type='submit'>
+</form>
+

@@ -36,6 +36,15 @@ class Transaction
     results = SqlRunner.run( sql, values )
     return Transaction.new( results.first )
   end
+
+  def self.all_sorted(order)
+    if order == 'ASC'
+      Transaction.all.sort {|first, second| first.time <=> second.time}
+    else 
+      Transaction.all.sort {|first, second| second.time <=> first.time}
+    end
+  end
+
 ################################################## 
 # Instance methods
 ################################################## 

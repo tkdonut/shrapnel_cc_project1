@@ -1,0 +1,15 @@
+  <table class = transcard>
+    <tr>
+      <td>Name: <%= @vendor.name %></td>
+    </tr>
+  </table>
+  <hr></hr>
+    <nav class="bottom_icons">
+      <form action = '/vendors/<%=@vendor.id%>/delete', method='POST'>
+        <input type = 'image' src='/assets/trashcan.svg'>
+      </form>
+
+      <form action = '/vendors/<%=@vendor.id%>/edit', method='GET'>
+        <input type = 'image' src='/assets/edit.svg'>
+      </form>
+    </nav>

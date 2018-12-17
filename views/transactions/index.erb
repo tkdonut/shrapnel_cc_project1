@@ -1,4 +1,11 @@
 <%='No transactions recorded!' if @transactions.length == 0 %>
+<form action="/transactions" method="get">
+    <select name="sort_order">
+      <option name="sort_order" value="DSC">Most Recent</option>
+      <option <%="SELECTED" if @order == "ASC" %> name="sort_order" value="ASC">Oldest First</option>
+    </select>
+     <input type="submit"> 
+   </form>
 <% @transactions.each do |transaction| %>
   <table style='border: solid; margin: 10px;' class = transcard>
     <tr>
@@ -9,7 +16,7 @@
     <tr>
       <td>Vendor: <%= transaction.vendor.name %><br></td>
       <td>Tag:  <%= transaction.tag.name %><br></td>
-      <td><a href='/transactions/<%=transaction.id%>'><img width=50px src='/assets/mag.svg'></a></td>
+      <td><a href='/transactions/<%=transaction.id%>'><img width=30px src='/assets/mag.svg'></a></td>
     </tr>
   </table>
 <% end %>

@@ -1,5 +1,7 @@
 get '/transactions' do
-  @transactions = Transaction.all
+  unsorted = Transaction.all
+  @order = params['sort_order']
+  @transactions = Transaction.all_sorted(@order)
   erb(:'transactions/index')
 end
 
@@ -26,4 +28,15 @@ post '/transactions/:id/delete' do
   redirect to '/transactions'
 end
 
+get '/transactions/:id/edit' do
+  @transaction = Transaction.find(params['id'])
+  @tags = Tag.all
+  @vendors = Vendor.all
+  erb(:'transactions/edit')
+end
 
+post '/transactions/:id/edit' do
+  transaction = Transaction.new(params)
+  transaction.update
+  redirect to '/transactions'
+end

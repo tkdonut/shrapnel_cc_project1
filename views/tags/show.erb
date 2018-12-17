@@ -1,0 +1,15 @@
+  <table class = transcard>
+    <tr>
+      <td>Name: <%= @tag.name %></td>
+    </tr>
+  </table>
+  <hr></hr>
+    <nav class="bottom_icons">
+      <form action = '/tags/<%=@tag.id%>/delete', method='POST'>
+        <input type = 'image' src='/assets/trashcan.svg'>
+      </form>
+
+      <form action = '/tags/<%=@tag.id%>/edit', method='GET'>
+        <input type = 'image' src='/assets/edit.svg'>
+      </form>
+    </nav>
