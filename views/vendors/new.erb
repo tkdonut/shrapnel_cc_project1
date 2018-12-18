@@ -2,8 +2,8 @@
   <h2> Create new vendor </h2>
   <form action='/vendors' method='POST'>
     <label for='name'> Name: </label>
-    <input type='text' name='name' id='name'>
-    <input type='submit'>
+    <input type='text' pattern=".{3,15}" required title="3 to 15 characters" name='name' id='name'>
+    <input type='submit' value='Create'>
   </form>
 </div>
 
