@@ -9,7 +9,6 @@ end
 
 get '/tags/:id' do
   @tag = Tag.find(params['id'])
-  @last = Tag.all.length < 2
   erb(:'tags/show')
 end
 

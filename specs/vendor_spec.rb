@@ -52,6 +52,19 @@ class VendorTest < Minitest::Test
     result = Vendor.all.length
     assert_equal(0, result)
   end
+
+  def test_last__true
+    Vendor.delete_all
+    assert_equal(true, Vendor.last?)
+  end
+
+  def test_last__false
+    Vendor.delete_all
+    @vendor1.save  
+    @vendor1.save  
+    @vendor1.save  
+    assert_equal(false, Vendor.last?)
+  end
 end
 
 load('../db/transaction_seed.rb')

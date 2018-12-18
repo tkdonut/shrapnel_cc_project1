@@ -11,13 +11,8 @@ class Tag
   # Class methods
 
   def self.last?
-    if Tag.all.length <= 1
-      return true
-    else
-      return false 
-    end
+    Tag.all.length <= 1
   end
-
 
   def self.all
     sql = 'SELECT * FROM tags'

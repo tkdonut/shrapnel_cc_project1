@@ -6,12 +6,12 @@
   </table>
   <hr></hr>
   <div class = 'indexline' id='bottbutts'> 
-      <form <%= "style='display:none'" if @last %> action = '/tags/<%=@tag.id%>/delete', method='POST'>
+      <form <%= "style='display:none'" if Tag.last? %> action = '/tags/<%=@tag.id%>/delete', method='POST'>
         <input  type = 'image' src='/assets/trashcan.svg'>
       </form>
       <form action = '/tags/<%=@tag.id%>/edit', method='GET'>
         <input type = 'image' src='/assets/edit.svg'>
       </form>
   </div>
-  <%= "Cannot delete last tag" if @last %>
+  <%= "Cannot delete last tag" if Tag.last? %>
 </div>

@@ -9,7 +9,11 @@ class Vendor
   end
 
 # Class methods
-
+  
+  def self.last?
+    Vendor.all.length <= 1
+  end
+  
   def self.all()
     sql = "SELECT * FROM vendors"
     results = SqlRunner.run( sql )

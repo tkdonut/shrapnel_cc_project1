@@ -7,7 +7,7 @@ require_relative '../models/tag.rb'
 class TagTest < Minitest::Test
 
   def setup
-    system('ruby ../db/transaction_seed.rb')
+    load('../db/transaction_seed.rb')
     @tag1 = Tag.new('name' => 'Christmas Shopping')
   end
 
@@ -67,3 +67,4 @@ class TagTest < Minitest::Test
   end
 end
 
+load('../db/transaction_seed.rb')
