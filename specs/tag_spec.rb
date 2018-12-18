@@ -7,7 +7,7 @@ require_relative '../models/tag.rb'
 class TagTest < Minitest::Test
 
   def setup
-    load('../db/transaction_seed.rb')
+    system('ruby ../db/transaction_seed.rb')
     @tag1 = Tag.new('name' => 'Christmas Shopping')
   end
 
@@ -52,6 +52,18 @@ class TagTest < Minitest::Test
     result = Tag.all.length
     assert_equal(0, result)
   end
+
+  def test_last__true
+    Tag.delete_all
+    assert_equal(true, Tag.last?)
+  end
+
+  def test_last__false
+    Tag.delete_all
+    @tag1.save  
+    @tag1.save  
+    @tag1.save  
+    assert_equal(false, Tag.last?)
+  end
 end
 
-load('../db/transaction_seed.rb')

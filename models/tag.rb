@@ -10,6 +10,15 @@ class Tag
 
   # Class methods
 
+  def self.last?
+    if Tag.all.length <= 1
+      return true
+    else
+      return false 
+    end
+  end
+
+
   def self.all
     sql = 'SELECT * FROM tags'
     results = SqlRunner.run(sql)
