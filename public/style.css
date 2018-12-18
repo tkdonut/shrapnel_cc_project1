@@ -20,11 +20,11 @@ body {
 
 
 .contentbox{
-background-color: #FBFBF3;
-flex-direction: column;
-display: flex;
-justify-content: center;
-align-items: center;
+  background-color: #FBFBF3;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .transcard td{
@@ -44,7 +44,7 @@ a:hover {
 }
 
 #nav_bar a{
-margin: 10px;
+  margin: 10px;
 }
 
 .bottom_icons {
@@ -54,17 +54,17 @@ margin: 10px;
 }
 
 .nav_bar {
-background-color: transparent;  
-background-image: url('/assets/shrapnelbox.png');
-background-size: contain;
-height: 100%;
-width: 260px;
-background-repeat: no-repeat;
-position: fixed; z-index: 1; top: 0; 
-left: 0;
-overflow-x: hidden; 
-padding-left: 0px;
-padding-top: 250px;
+  background-color: transparent;  
+  background-image: url('/assets/shrapnelbox2.png');
+  background-size: contain;
+  height: 100%;
+  width: 260px;
+  background-repeat: no-repeat;
+  position: fixed; z-index: 1; top: 0; 
+  left: 0;
+  overflow-x: hidden; 
+  padding-left: 0px;
+  padding-top: 250px;
 }
 
 .navbar_list {
@@ -81,30 +81,31 @@ padding:8px;
   margin-left: 260px;
   justify-content: center;
   align-items: center;
-  }
+}
 
-  .contentbox {
+
+.contentbox {
   padding: 20px;
   margin-top:10px;
   margin-bottom:10px;
-  }
+}
 
-  .indexline {
-    width: 100%;
-    display: flex;
-    align-items: space-between;
-    justify-content: space-between;
-  }
+.indexline {
+  width: 100%;
+  display: flex;
+  align-items: space-between;
+  justify-content: space-between;
+}
 
-  #bottbutts{
+#bottbutts{
     justify-content: space-around;
 }
  
 #trans div {
-    margin: 5px;
-    font-size: 1em;
-  }
-  
+  margin: 5px;
+  font-size: 1em;
+}
+
   hr {
   border: 0;
   clear:both;
