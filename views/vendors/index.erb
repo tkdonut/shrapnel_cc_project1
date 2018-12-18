@@ -1,6 +1,9 @@
+<div class='contentbox'>
 <h1>List of Vendors</h1>
 <% @vendors.each do |vendor| %>
+    <div class='indexline'>
   <%= vendor.name %><br>
       <a href='/vendors/<%=vendor.id%>'><img width=30px src='/assets/mag.svg'></a></td>
-  <hr></hr>
+    </div>
 <% end %>
+</div>

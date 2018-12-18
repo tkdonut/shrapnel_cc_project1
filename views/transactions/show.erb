@@ -1,3 +1,4 @@
+<div class = 'contentbox'>
   <table class = transcard>
     <tr>
       <td>Amount: £<%= '%.2f' % @transaction.amount %></td>
@@ -10,7 +11,7 @@
     </tr>
   </table>
   <hr></hr>
-    <nav class="bottom_icons">
+  <div class = 'indexline' id='bottbutts'> 
       <form action = '/transactions/<%=@transaction.id%>/delete', method='POST'>
         <input type = 'image' src='/assets/trashcan.svg'>
       </form>
@@ -18,4 +19,5 @@
       <form action = '/transactions/<%=@transaction.id%>/edit', method='GET'>
         <input type = 'image' src='/assets/edit.svg'>
       </form>
-    </nav>
+  </div>
+</div>

@@ -1,45 +1,47 @@
+/*
+like it? | #FBFBF3
+cornflower sky | #758698
+Alcest blue | #396884
+navigator | #1d2d47
+civil shadow | #0D0E23
+ */
+
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Spectral+SC');
+
 body {
-background-image: url('/assets/milkyway.jpg');
-font-family: 'Raleway', sans-serif;
-background-size:cover;
+  font-family: 'Spectral SC', serif;
+  margin: 0px;
+  box-sizing: border-box;
+  color: #1D2D47;
+  background-image: linear-gradient(to right, #1d2d47 , #396884);
+  overflow: hidden;
+  min-width: 1280px;
 }
 
-.flex-aligner{
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
 
-.flexbox{
-margin: 20px;
-border: solid;
-padding: 40px;
-box-shadow: 3px 3px 3px Black;
-background-color: white;
-max-height: 80%;
+.contentbox{
+background-color: #FBFBF3;
+flex-direction: column;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .transcard td{
 padding: 10px;
-width:300px;
 }
 
 #yield {
-  overflow-y: scroll;
-  max-height:80%;
-overflow 
 }
 
 a {
   text-decoration: none;
-  color: Black;
+  color:#1D2D47 ;
 }
 
 a:hover {
- color:darkred;
+ color:#758698;
 }
 
 #nav_bar a{
@@ -52,5 +54,71 @@ margin: 10px;
   padding-top: 20px;
 }
 
+.nav_bar {
+background-color: transparent;  
+background-image: url('/assets/shrapnelbox.png');
+background-size: contain;
+height: 100%;
+width: 260px;
+background-repeat: no-repeat;
+position: fixed; z-index: 1; top: 0; 
+left: 0;
+overflow-x: hidden; 
+padding-left: 0px;
+padding-top: 250px;
+}
 
+.navbar_list {
+list-style: none;
+}
 
+.navbar_list li {
+padding:8px;
+}
+
+.remaining {
+  flex-shrink: 1;
+  display: flex;
+  margin-left: 260px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  }
+
+  .contentbox {
+  padding: 20px;
+  }
+
+  .indexline {
+    width: 100%;
+    display: flex;
+    align-items: space-between;
+    justify-content: space-between;
+  }
+
+  #bottbutts{
+    justify-content: space-around;
+}
+ 
+#trans div {
+    margin: 5px;
+    font-size: 1em;
+  }
+  
+  hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;
+  background-color:#1d2d47;
+  height: 1px;
+}
+
+.trans_container {
+min-width: 1000px;
+}
+
+.transcard{
+text-align: center;
+
+}

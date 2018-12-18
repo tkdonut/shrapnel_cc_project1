@@ -1,6 +1,9 @@
+<div class='contentbox'>
 <h1>List of Tags</h1>
-<% @tags.each do |tag| %>
-  <%= tag.name %><br>
-      <a href='/tags/<%=tag.id%>'><img width=30px src='/assets/mag.svg'></a></td>
-  <hr></hr>
-<% end %>
+  <% @tags.each do |tag| %>
+    <div class='indexline'>
+    <%= tag.name %><br>
+      <a id = 'mag' href='/tags/<%=tag.id%>'><img width=30px src='/assets/mag.svg'></a></td>
+    </div>
+  <% end %>
+</div>

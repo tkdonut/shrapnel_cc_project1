@@ -1,3 +1,4 @@
+<div class ='contentbox'>
 <%='No transactions recorded!' if @transactions.length == 0 %>
 <form action="/transactions" method="get">
     <select name="sort_order">
@@ -6,17 +7,35 @@
     </select>
      <input type="submit"> 
    </form>
-<% @transactions.each do |transaction| %>
-  <table style='border: solid; margin: 10px;' class = transcard>
+  <table class = transcard>
     <tr>
-      <td>Amount: £<%= '%.2f' % transaction.amount%></td>
-      <td>Date: <%= transaction.time.strftime("%d/%m/%Y")%></td>
-      <td>Time: <%= transaction.time.strftime("%-I:%M%p")%></td>
+      <td><h2>Amount (£)</h2></td>
+      <td><h2>Date</h2></td>
+      <td><h2>Time</h2></td>
+      <td><h2>Vendor</h2></td>
+      <td><h2>Tag</h2></td>
     </tr>
+<% @transactions.each do |transaction| %>
     <tr>
-      <td>Vendor: <%= transaction.vendor.name %><br></td>
-      <td>Tag:  <%= transaction.tag.name %><br></td>
+      <td><%= '%.2f' % transaction.amount%></td>
+      <td><%= transaction.time.strftime("%d/%m/%Y")%></td>
+      <td><%= transaction.time.strftime("%-I:%M%p")%></td>
+      <td><%= transaction.vendor.name %><br></td>
+      <td><%= transaction.tag.name %><br></td>
       <td><a href='/transactions/<%=transaction.id%>'><img width=30px src='/assets/mag.svg'></a></td>
     </tr>
-  </table>
 <% end %>
+  </table>
+
+  <hr></hr>
+
+  <div class='indexline' id='bottbutts'>
+    <a href='transactions/new'> CREATE A NEW TRANSACTION</a>
+    <% total = 0 
+    @transactions.each do |transaction|
+      total += transaction.amount
+    end
+    %>
+  <h2> TOTAL: <%=total.round(2)%></h2>
+  </div>
+  </div> 

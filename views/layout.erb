@@ -3,21 +3,16 @@
     <link rel="stylesheet" type="text/css" href="\style.css">
   </head>
   <body>
-    <div class = 'flex-aligner'>
-      <div class = 'flexbox' id = 'nav_bar'>
-        <nav>
-          <a href = '/'> Landing Page </a>
-          <a href = '/transactions'> Transaction Index </a>
-          <a href = '/transactions/new'> Create New Transaction</a>
-          <a href = '/tags'> Tag Index </a>  
-          <a href = '/tags/new'> Create New Tag</a>  
-          <a href = '/vendors'> Vendor Index </a>  
-          <a href = '/vendors/new'> Create New Vendor </a>  
-        </nav>
+      <div class = 'nav_bar'>
+          <ul class='navbar_list'>
+          <li><a href = '/'> Homepage </a></li>
+          <li><a href = '/transactions'> Transactions </a></li>
+          <li><a href = '/tags'> Tags </a></li>
+          <li><a href = '/vendors'> Vendors </a></li>
+          </ul>
       </div>
-      <div class = flexbox id='yield'>
-        <%= yield %> 
+      <div class = remaining id='yield'>
+          <%= yield %> 
       </div>
-    </div>
   </body>
 </html>
