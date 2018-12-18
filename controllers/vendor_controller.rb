@@ -14,6 +14,7 @@ end
 
 get '/vendors/:id' do
   @vendor = Vendor.find(params['id'])
+  @last = Vendor.all.length < 2
   erb(:'vendors/show')
 end
 
