@@ -1,41 +1,41 @@
 <div class ='contentbox'>
-<%='No transactions recorded!' if @transactions.length == 0 %>
-<form action="/transactions" method="get">
+  <%='No transactions recorded!' if @transactions.length == 0 %>
+  <form action="/transactions" method="get">
     <select name="sort_order">
       <option name="sort_order" value="DSC">Most Recent</option>
       <option <%="SELECTED" if @order == "ASC" %> name="sort_order" value="ASC">Oldest First</option>
     </select>
-     <input type="submit"> 
+   <input type="submit"> 
    </form>
-  <table class = transcard>
-    <tr>
-      <td><h2>Amount (£)</h2></td>
-      <td><h2>Date</h2></td>
-      <td><h2>Time</h2></td>
-      <td><h2>Vendor</h2></td>
-      <td><h2>Tag</h2></td>
-    </tr>
-<% @transactions.each do |transaction| %>
-    <tr>
-      <td><%= '%.2f' % transaction.amount%></td>
-      <td><%= transaction.time.strftime("%d/%m/%Y")%></td>
-      <td><%= transaction.time.strftime("%-I:%M%p")%></td>
-      <td><%= transaction.vendor.name %><br></td>
-      <td><%= transaction.tag.name %><br></td>
-      <td><a href='/transactions/<%=transaction.id%>'><img width=30px src='/assets/mag.svg'></a></td>
-    </tr>
-<% end %>
+    <table class = transcard>
+      <tr>
+        <td><h2>Amount (£)</h2></td>
+        <td><h2>Date</h2></td>
+        <td><h2>Time</h2></td>
+        <td><h2>Vendor</h2></td>
+        <td><h2>Tag</h2></td>
+      </tr>
+      <% @transactions.each do |transaction| %>
+        <tr>
+          <td><%= '%.2f' % transaction.amount%></td>
+          <td><%= transaction.time.strftime("%d/%m/%Y")%></td>
+          <td><%= transaction.time.strftime("%-I:%M%p")%></td>
+          <td><%= transaction.vendor.name %><br></td>
+          <td><%= transaction.tag.name %><br></td>
+          <td><a href='/transactions/<%=transaction.id%>'><img width=25px src='/assets/mag.svg'></a></td>
+        </tr>
+      <% end %>
   </table>
-
   <hr></hr>
 
   <div class='indexline' id='bottbutts'>
-    <a href='transactions/new'> CREATE A NEW TRANSACTION</a>
+    <a href='transactions/new'> <h2>ADD TRANSACTION</h2></a>
+
     <% total = 0 
-    @transactions.each do |transaction|
-      total += transaction.amount
-    end
-    %>
-  <h2> TOTAL: <%=total.round(2)%></h2>
+       @transactions.each do |transaction|
+       total += transaction.amount
+    end %>
+
+    <h2> TOTAL: <%='%.2f' % total.round(2)%></h2>
   </div>
-  </div> 
+</div> 

@@ -3,7 +3,11 @@
   <% @tags.each do |tag| %>
     <div class='indexline'>
     <%= tag.name %><br>
-      <a id = 'mag' href='/tags/<%=tag.id%>'><img width=30px src='/assets/mag.svg'></a></td>
+      <a id = 'mag' href='/tags/<%=tag.id%>'><img width=25px src='/assets/mag.svg'></a></td>
     </div>
   <% end %>
+  <hr></hr>
+  <div class='indexline' id='bottbutts'>
+    <a href='tags/new'> <h3>ADD TAG</h2></a>
+  </div>
 </div>

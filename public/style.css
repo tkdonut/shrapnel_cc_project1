@@ -15,7 +15,6 @@ body {
   box-sizing: border-box;
   color: #1D2D47;
   background-image: linear-gradient(to right, #1d2d47 , #396884);
-  overflow: hidden;
   min-width: 1280px;
 }
 
@@ -82,11 +81,12 @@ padding:8px;
   margin-left: 260px;
   justify-content: center;
   align-items: center;
-  height: 100%;
   }
 
   .contentbox {
   padding: 20px;
+  margin-top:10px;
+  margin-bottom:10px;
   }
 
   .indexline {
@@ -119,6 +119,34 @@ min-width: 1000px;
 }
 
 .transcard{
+table-layout: fixed;
 text-align: center;
 
 }
+#landing_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+}
+
+#landing_container a {
+font-size: 3em;
+color: white;
+}
+
+#landing_container img {
+margin-right:30px;
+}
+
+#landing_container a:hover {
+color: #1d2d47;
+}
+  .flex_column {
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+    justify-content: space-around;
+    height: 40%;
+ 

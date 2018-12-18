@@ -1,5 +1,4 @@
 get '/transactions' do
-  unsorted = Transaction.all
   @order = params['sort_order']
   @transactions = Transaction.all_sorted(@order)
   erb(:'transactions/index')
