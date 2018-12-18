@@ -126,7 +126,7 @@ text-align: center;
 #landing_container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     width: 80%;
 }
@@ -147,6 +147,6 @@ color: #1d2d47;
     display: flex;
     flex-direction: column;
     align-items: space-around;
-    justify-content: space-around;
+    justify-content: flex-end;
     height: 40%;
  
