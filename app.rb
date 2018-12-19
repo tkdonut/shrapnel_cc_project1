@@ -16,6 +16,8 @@ require_relative 'controllers/budgets_controller'
 also_reload('../models/*')
 also_reload('../views/*')
 
+binding.pry
+
 get '/' do
   erb(:index)
 end

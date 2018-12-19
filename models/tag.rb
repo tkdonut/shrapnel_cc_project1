@@ -70,7 +70,16 @@ class Tag
       Transaction.new(transaction)
     end
   end
-
+  
+  def totaltrans
+    transactions = self.transactions
+    total = 0
+    transactions.each do |transaction|
+      total += transaction.amount 
+    end
+    return total
+  end
+    
   def vendors
     sql = "SELECT v.* FROM
           transactions t INNER JOIN vendors v
