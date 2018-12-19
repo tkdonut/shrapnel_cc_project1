@@ -5,7 +5,7 @@ class Budget
 
   def initialize(options)
     @id = options['id'] if options['id']
-    @maxspend = options['maxspend'] 
+    @maxspend = options['maxspend'].to_f 
     @tag_id = options['tag_id']
   end
 
