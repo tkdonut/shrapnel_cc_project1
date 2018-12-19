@@ -30,7 +30,7 @@
             <hr></hr>
           <h3>Budgets</h3>
           <% budgets = Budget.all %>
-          <%= "You haven't configured any budgets yet. Why not set one up now." if Budget.all.length == 0; %> 
+          <%= "You haven't configured any budgets yet.<br><br> <a href='budgets/new'>Why not set one up now?</a>" if Budget.all.length == 0; %> 
           <% budgets.each do |budget| %>
           <% bar_percentage = ((Tag.find(budget.tag_id).totaltrans / budget.maxspend) * 100).round(2) %>
           <% bar_percentage = 100 if bar_percentage > 100 %>
@@ -38,7 +38,7 @@
           £<%='%.2f' % Tag.find(budget.tag_id).totaltrans%> /£<%='%.2f' % budget.maxspend%>
            <div class="wrapper">
              <div class="progress-bar">
-               <span class="progress-bar-fill" style="<%= 'background-color: darkred;' if bar_percentage >= 80%>width: <%=bar_percentage%>%;"></span>
+               <span class="progress-bar-fill" style="<%= 'background-color: darkred;' if bar_percentage >= 75%>width: <%=bar_percentage%>%;"></span>
              </div>
            </div> 
         <hr></hr>

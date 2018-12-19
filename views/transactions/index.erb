@@ -7,6 +7,19 @@
       <option name="sort_order" value="DSC">Most Recent</option>
       <option <%="SELECTED" if @order == "ASC" %> name="sort_order" value="ASC">Oldest First</option>
     </select>
+    <select name='tag_id' id='tag'>
+      <option value = 'all'>All tags</option> 
+      <% Tag.all.each do |tag| %>
+        <option value = '<%=tag.id%>'><%=tag.name%></option>
+      <% end %>
+    </select>
+
+    <select name='vendor_id' id='vendor'>
+      <option value = 'all'>All vendors</option> 
+      <% Vendor.all.each do |vendor| %>
+        <option value = '<%=vendor.id%>'><%=vendor.name%></option>
+      <% end %>
+    </select>
    <input type="submit"> 
    </form>
     <table class = transcard>
