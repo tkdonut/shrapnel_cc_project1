@@ -8,9 +8,9 @@ require_relative 'models/tag'
 require_relative 'models/transaction'
 require_relative 'models/budget'
 
-require_relative 'controllers/tag_controller'
-require_relative 'controllers/vendor_controller'
-require_relative 'controllers/transaction_controller'
+require_relative 'controllers/tags_controller'
+require_relative 'controllers/vendors_controller'
+require_relative 'controllers/transactions_controller'
 require_relative 'controllers/budgets_controller'
 
 also_reload('../models/*')
