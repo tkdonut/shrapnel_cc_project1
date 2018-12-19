@@ -1,0 +1,18 @@
+<div class='contentbox'>
+  <h2> Create new budget </h2>
+  <form action='/budgets' method='POST'>
+    <label for='name'> Amount: </label>
+    <input type='number' name='maxspend' id='maxspend'>
+    <select name='tag_id'>
+    <% @tags.each do |tag|%>
+      <option value='<%=tag.id%>'><%=tag.name%></option>
+    <% end %>
+    <input type='submit' value='Create'>
+  </form>
+  <hr></hr>
+  <div class = 'indexline' id='bottbutts'> 
+    <form action = '/budgets', method='GET'>
+        <input width = 30px type = 'image' src='/assets/back.png'>
+      </form>
+  </div>
+</div>

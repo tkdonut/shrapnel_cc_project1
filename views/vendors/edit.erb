@@ -2,7 +2,12 @@
 <h2> Edit vendor </h2>
 <form action='/vendors/<%= @vendor.id%>/edit' method='POST'>
   <label for='name'> Name: </label>
-  <input type='text' pattern=".{3,20}" required title="3 to 20 characters" name='name' id='name'>
+  <input value='<%= @vendor.name%> ' type='text' pattern=".{3,20}" required title="3 to 20 characters" name='name' id='name'>
   <input type='submit' value='Update'>
 </form>
+  <div class = 'indexline' id='bottbutts'> 
+    <form action = '/vendors', method='GET'>
+        <input width = 30px type = 'image' src='/assets/back.png'>
+      </form>
+  </div>
 </div>

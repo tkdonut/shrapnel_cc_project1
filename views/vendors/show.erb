@@ -6,11 +6,14 @@
   </table>
   <hr></hr>
   <div class = 'indexline' id='bottbutts'> 
+    <form action = '/vendors', method='GET'>
+        <input width = 30px type = 'image' src='/assets/back.png'>
+      </form>
     <form <%= "style='display:none'" if Vendor.last? %> action = '/vendors/<%=@vendor.id%>/delete', method='POST'>
-      <input type = 'image' src='/assets/trashcan.svg'>
+      <input  width = 30px type = 'image' src='/assets/trashcan.svg'>
     </form>
     <form action = '/vendors/<%=@vendor.id%>/edit', method='GET'>
-      <input type = 'image' src='/assets/edit.svg'>
+      <input  width = 30px type = 'image' src='/assets/edit.svg'>
     </form>
   </div>
     <%= "Cannot delete last vendor" if Vendor.last? %>

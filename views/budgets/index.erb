@@ -1,0 +1,14 @@
+<div class='contentbox'>
+<h1>List of Budgets</h1>
+  <% @budgets.each do |budget| %>
+    <div class='indexline'>
+    Budget: £<%= budget.maxspend %><br>
+    Assigned to: <%= Tag.find(budget.tag_id).name %>
+    </div>
+    <hr></hr>
+  <% end %>
+  <hr></hr>
+  <div class='indexline' id='bottbutts'>
+    <a href='budgets/new'> <h3>ADD BUDGET</h2></a>
+  </div>
+</div>
