@@ -1,5 +1,7 @@
 <div class ='contentbox'>
-  <%='No transactions recorded!' if @transactions.length == 0 %>
+  <%if @transactions.length == 0 %>
+    No transactions recorded yet!
+  <%else%>
   <form action="/transactions" method="get">
     <select name="sort_order">
       <option name="sort_order" value="DSC">Most Recent</option>
@@ -27,7 +29,7 @@
       <% end %>
   </table>
   <hr></hr>
-
+<%end%>
   <div class='indexline' id='bottbutts'>
     <a href='transactions/new'> <h2>ADD TRANSACTION</h2></a>
 
@@ -35,7 +37,8 @@
        @transactions.each do |transaction|
        total += transaction.amount
     end %>
-
+    <% if @transactions.length > 0 %>
     <h2> TOTAL: £<%='%.2f' % total.round(2)%></h2>
+  <%end%>
   </div>
 </div> 

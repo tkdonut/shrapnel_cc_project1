@@ -13,7 +13,7 @@ vendor1 = Vendor.new({'name' => 'Edinburgh Books'}).save
 vendor2 = Vendor.new({'name' => 'The Chanter'}).save
 vendor3 = Vendor.new({'name' => 'The Blue Blazer'}).save
 vendor4 = Vendor.new({'name' => 'Sainsburies'}).save
-vendor5 = Vendor.new({'name' => 'Peppers Sandwitches'}).save
+vendor5 = Vendor.new({'name' => 'Peppers Sandwiches'}).save
 vendor6 = Vendor.new({'name' => 'Uber'}).save
 vendor7 = Vendor.new({'name' => 'Castle Terrace'}).save
 vendor9 = Vendor.new({'name' => 'Lothian Buses'}).save

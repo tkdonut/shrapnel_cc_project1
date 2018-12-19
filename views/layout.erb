@@ -11,10 +11,39 @@
           <li><a href = '/transactions'> Transactions </a></li>
           <li><a href = '/tags'> Tags </a></li>
           <li><a href = '/vendors'> Vendors </a></li>
+          <li><a href = '/budgets'> Budgets </a></li>
           </ul>
       </div>
       <div class = remaining id='yield'>
-          <%= yield %> 
+        <%= yield %> 
+        <div class = 'contentbox' id='sidebar'>
+            <h4> Most recent transaction</h4>
+            <% if Transaction.all.length > 0 %>
+              <% last_transaction = Transaction.all_sorted('DSC').first %><br>
+              Amount : £<%= '%.2f' % last_transaction.amount %><br>
+              Vendor : <%= Vendor.find(last_transaction.vendor_id).name %><br>
+              Tag : <%= Tag.find(last_transaction.tag_id).name %><br>
+              <a id = 'mag' href='/transactions/<%=last_transaction.id%>'><img width=25px src='/assets/mag.svg'></a>
+            <% else %>
+              No transactions recorded yet.
+            <%end%>
+            <hr></hr>
+          <h3>Budgets</h3>
+          <% budgets = Budget.all %>
+          <%= "You haven't configured any budgets yet. Why not set one up now." if Budget.all.length == 0; %> 
+          <% budgets.each do |budget| %>
+          <% bar_percentage = ((Tag.find(budget.tag_id).totaltrans / budget.maxspend) * 100).round(2) %>
+          <% bar_percentage = 100 if bar_percentage > 100 %>
+          <%= Tag.find(budget.tag_id).name %> Budget <br>
+          £<%='%.2f' % Tag.find(budget.tag_id).totaltrans%> /£<%='%.2f' % budget.maxspend%>
+           <div class="wrapper">
+             <div class="progress-bar">
+               <span class="progress-bar-fill" style="<%= 'background-color: darkred;' if bar_percentage >= 80%>width: <%=bar_percentage%>%;"></span>
+             </div>
+           </div> 
+        <hr></hr>
+  <% end %>  
+          </div>
       </div>
   </body>
 </html>

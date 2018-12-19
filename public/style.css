@@ -76,13 +76,12 @@ padding:8px;
 }
 
 .remaining {
-  flex-shrink: 1;
   display: flex;
   margin-left: 260px;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
 }
-
 
 .contentbox {
   padding: 20px;
@@ -133,7 +132,7 @@ text-align: center;
 }
 
 #landing_container a {
-font-size: 3em;
+font-size: 2em;
 color: white;
 }
 
@@ -152,7 +151,7 @@ color: #1d2d47;
     height: 40%;
 } 
 .wrapper {
-				width: 300px;
+				width: 200px;
 			}
 			
 .progress-bar {
@@ -168,6 +167,17 @@ color: #1d2d47;
 				height: 22px;
 				background-color: #758698;
 				border-radius: 3px;
-				
 				transition: width 500ms ease-in-out;
 			}
+#sidebar {
+text-align: center;
+max-width: 30%;
+align-self: flex-start;
+margin-left:10px;
+margin-right:10px;
+}
+
+#sidebar img {
+padding: 25px;
+}
+

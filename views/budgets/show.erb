@@ -1,20 +1,20 @@
 <div class = contentbox>
   <table class = transcard>
     <tr>
-      <td>Name: <%= @tag.name %></td>
+      <td>Amount: <%= @budget.maxspend %></td>
+      <td>Catagory: <%= Tag.find(@budget.tag_id).name %></td>
     </tr>
   </table>
   <hr></hr>
   <div class = 'indexline' id='bottbutts'> 
-      <form action = '/tags', method='GET'>
+      <form action = '/budgets', method='GET'>
         <input width = 30px type = 'image' src='/assets/back.png'>
       </form>
-      <form <%= "style='display:none'" if Tag.last? %> action = '/tags/<%=@tag.id%>/delete', method='POST'>
+      <form action = '/budgets/<%=@budget.id%>/delete', method='POST'>
         <input  width = 30px type = 'image' src='/assets/trashcan.svg'>
       </form>
-      <form action = '/tags/<%=@tag.id%>/edit', method='GET'>
+      <form action = '/budgets/<%=@budget.id%>/edit', method='GET'>
         <input width = 30px type = 'image' src='/assets/edit.svg'>
       </form>
   </div>
-  <%= "Cannot delete last tag" if Tag.last? %>
 </div>

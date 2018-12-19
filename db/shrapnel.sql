@@ -1,6 +1,6 @@
 DROP TABLE transactions;
+DROP TABLE tags ON DELETE CASCADE;
 DROP TABLE budgets;
-DROP TABLE tags;
 DROP TABLE vendors;
 
 

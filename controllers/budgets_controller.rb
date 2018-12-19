@@ -26,7 +26,6 @@ end
 
 post '/budgets' do
   @budget = Budget.new(params)
-  binding.pry
   @budget.save
   redirect to '/budgets'
 end
