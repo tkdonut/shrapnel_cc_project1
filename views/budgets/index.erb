@@ -6,11 +6,12 @@
     Currently spent: £<%='%.2f' % Tag.find(budget.tag_id).totaltrans%><br>
      <% bar_percentage = ((Tag.find(budget.tag_id).totaltrans / budget.maxspend) * 100).round(2) %>
      <% bar_percentage = 100 if bar_percentage > 100 %>
+     <% bar_percentage = 0 if bar_percentage < 0 %>
       <a id = 'mag' href='/budgets/<%=budget.id%>'><img width=25px src='/assets/mag.svg'></a></td>
     </div>
    <div class="wrapper">
 			<div class="progress-bar">
-        <span class="progress-bar-fill" style="<%= 'background-color: darkred;' if bar_percentage >= 80%> width: <%=bar_percentage%>%;"></span>
+        <span class="progress-bar-fill" style="<%= 'background-color: darkred;' if bar_percentage >= 75%> width: <%=bar_percentage%>%;"></span>
 			</div>
 		</div> 
     <hr></hr>
