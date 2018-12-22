@@ -1,5 +1,3 @@
-require 'rubygems'
-require 'bundler/setup'
 
 require 'pry'
 
@@ -16,9 +14,10 @@ require_relative 'controllers/vendors_controller'
 require_relative 'controllers/transactions_controller'
 require_relative 'controllers/budgets_controller'
 
-also_reload('../models/*')
-also_reload('../views/*')
 
-get '/' do
-  erb(:index)
-end
+  also_reload('../models/*')
+  also_reload('../views/*')
+
+  get '/' do
+    erb(:index)
+  end
