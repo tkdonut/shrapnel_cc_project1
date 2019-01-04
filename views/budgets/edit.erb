@@ -1,13 +1,17 @@
 
 <div class='contentbox'>
-  <h2> Edit tag </h2>
-  <form action='/tags/<%= @tag.id%>/edit' method='POST'>
-    <label for='name'> Name: </label>
-    <input value='<%= @tag.name %>' type='text' pattern=".{3,20}" required title="3 to 20 characters" name='name' id='name'>
+  <h2> Edit budget </h2>
+  <form action='/budgets/<%= @budget.id%>/edit' method='POST'>
+    <label for='maxspend'> Amount: </label>
+    <input value='<%= @budget.maxspend %>' type='number' name='maxspend' id='maxspend'>
+    <select name='tag_id'>
+    <% @tags.each do |tag|%>
+      <option <% "selected" if @budget.tag_id == tag.id %> value='<%=tag.id%>'><%=tag.name%></option>
+    <% end %>
     <input type='submit' value ='Update'>
   </form>
   <div class = 'indexline' id='bottbutts'> 
-    <form action = '/tags', method='GET'>
+    <form action = '/budgets', method='GET'>
         <input width = 30px type = 'image' src='/assets/back.png'>
       </form>
   </div>

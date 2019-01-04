@@ -1,7 +1,7 @@
 require_relative '../models/tag'
 require_relative '../models/vendor'
 require_relative '../models/transaction'
-
+require_relative '../models/budget'
 Tag.delete_all
 food = Tag.new({'name' => 'Food'}).save
 bills = Tag.new({'name' => 'Bills'}).save
@@ -21,7 +21,7 @@ vendor1O = Vendor.new({'name' => 'Fatty Owls'}).save
 vendor11 = Vendor.new({'name' => 'Edinburgh Council'}).save
 
 Transaction.delete_all
-
+Budget.delete_all
 transaction1 = Transaction.new ({
   'amount' => '5.99',
   'vendor_id' => vendor1.id,
