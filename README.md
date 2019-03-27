@@ -15,14 +15,14 @@ Finally the app can be started by running the `app.rb` file in the root folder.
 
 The following gems must be installed in order to run the main app.
 
-  -sinatra
-  -sinatra-contrib
-  -pry
+- sinatra
+- sinatra-contrib
+- pry
 
 In order to run the unit test files in the specs folder, these additional gems must be installed
 
-*minitest
-*minitest-rg
+* minitest
+* minitest-rg
 
 ## Built With
 
